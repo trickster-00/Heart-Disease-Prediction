@@ -1,0 +1,22 @@
+body {
+    background-color: #899fc0;
+    text-align: center;
+}
+
+header {
+    background-color: #214a85;
+    font-family: Hoefler Text;
+    padding-top: 40;
+    padding-bottom: 40;
+    color: #ced7e5;
+}
+
+
+input{
+    text-align: center;
+}
+
+.div1{
+    margin: 0 auto;
+    width: 600px
+}
