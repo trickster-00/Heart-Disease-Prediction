@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-divice-scale, initial-scale=1.0">
+
+    <!-- google fonts --!>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Ultra&display=swap" rel="stylesheet">
+
+    <!-- bootstrap --!>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- css --!>
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <title>Heart Disease Prediction</title>
+
+</head>
+<body>
+
+     <header>
+        <h1>Heart Disease Prediction</h1>
+    </header>
+
+    <br><br><br>
+
+    <div class="container">
+
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Age</h4>
+                            <input type="text" name="age" placeholder="age" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Sex</h4>
+                            <select name="sex" id="sex" required="required">
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Chest Pain Type </h5>
+                            <select name="cp" id="cp" required="required">
+                                <option value="0">typical angina </option>
+                                <option value="1">atypical angina </option>
+                                <option value="2">non-anginal pain </option>
+                                <option value="3">asymptomatic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Blood Pressure</h4>
+                            <input type="text" name="trestbps" placeholder="0-180" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Cholestoral</h4>
+                            <input type="text" name="chol" placeholder="<360" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                                <h4 class="card-title">Fasting Blood Sugar</h4>
+                                <select name="fbs" id="fbs" required="required">
+                                    <option value="1">> 120mg/dl</option>
+                                    <option value="0">< 120mg/dl</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Resting Electrocardiographic</h5>
+                                <select name="restecg" id="restecg" required="required">
+                                    <option value="0">Normal</option>
+                                    <option value="1">Having ST-T wave abnormality</option>
+                                    <option value="2">Showing left ventricular hypertrophy</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h4 class="card-title">Max Heart Rate</h4>
+                            <input type="text" name="thalach" placeholder="<220" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Exercise Induced Angina</h4>
+                            <select name="exang" id="exang" required="required">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Oldpeak</h4>
+                            <input type="text" name="oldpeak" placeholder="old peak" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Slope</h5>
+                            <select name="slope" id="slope" required="required">
+                                <option value="0">Unsloping</option>
+                                <option value="1">Flat</option>
+                                <option value="2">Downsloping</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h4 class="card-title">Number of Major Vessels</h4>
+                            <select name="ca" id="ca" required="required">
+                              <option value="0">1</option>
+                              <option value="1">2</option>
+                               <option value="2">3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+        <div class="div1">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Thal</h5>
+                            <input type="text" name="thal" placeholder="0-3" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!-- Submit -->
+            <input type="submit" value="submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+        <p>©2022 Manaal Saxena</p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
